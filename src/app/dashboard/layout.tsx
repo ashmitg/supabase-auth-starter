@@ -1,6 +1,6 @@
 "use client"
 import { AuthProvider } from "../../context/auth-context";
-import { SideNavbar } from "./(layout)/SideNavbar";
+import { SideNavbar } from "./(layout)/_components/SideNavbar";
 export default function Layout({children}: {children: React.ReactNode}) {
 
   return (
