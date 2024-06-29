@@ -14,7 +14,7 @@ export default function LoginPage() {
 
 
   return (
-    <div className="flex flex-cols justify-center items-center h-screen">
+    <div className="flex justify-center items-center h-screen">
       <Tabs defaultValue="login" className="w-[400px]">
         <TabsList className="grid grid-cols-2 w-full ">
           <TabsTrigger value="login">Sign In</TabsTrigger>

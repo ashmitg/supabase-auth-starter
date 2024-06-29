@@ -14,7 +14,7 @@ export default async function ResetPassword({
   } = await supabase.auth.getSession();
   console.log(session, 'session')
   if (session) {
-    return redirect('/');
+    return redirect('/dashboard');
   }
 
   const resetPassword = async (formData: FormData) => {

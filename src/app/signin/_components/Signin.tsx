@@ -22,7 +22,6 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { useGoogleAuth } from "@/hooks/useGoogleAuth"
 import { useSignin } from "@/hooks/useSignIn"
 
-
 export function Signin() {
   const { LogInGoogle } = useGoogleAuth()
   const {Signin, UserError, loading} = useSignin()
@@ -89,7 +88,7 @@ export function Signin() {
           <FcGoogle className="mr-2 w-4 h-4" />
           <span> Sign In with Google</span>
         </Button>
-        <div className="text-gray-800 mt-4 text-center text-sm">
+        <div className="text-gray-800 dark:text-gray-200 mt-4 text-center text-sm">
           Forgot your password?{" "}
           <Link href="/forgot-password" className="underline">
             Reset Password

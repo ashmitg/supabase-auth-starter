@@ -40,7 +40,7 @@ export default async function ForgotPassword({
     <div className="flex min-h-screen items-center justify-center bg-gray-100 dark:bg-black px-4 py-12 ">
       <div className="w-full max-w-md space-y-8">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 ">Reset Password</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-300">Reset Password</h2>
           <p className="mt-2 text-gray-500 ">
             Enter the email address associated with your account and we will send you a link to reset your password.
           </p>
@@ -58,7 +58,7 @@ export default async function ForgotPassword({
             />
           </div>
           <SubmitButton rendertext={"Please check email for link..."} buttontext={"Reset Password"} toastmessage={"If an email exists, you will receive an email"} />
-          <p className="flex justify-center text-gray-800">
+          <p className="flex justify-center text-gray-800 dark:text-gray-300">
             Remember your Password?
             <Link href='/signin' className="underline bold ml-2">Sign In</Link>
           </p>
