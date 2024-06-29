@@ -1,19 +1,81 @@
 "use client"
 
-import Link from "next/navigation"
+import Link from "next/link"
 import clsx from "clsx"
 import { usePathname } from "next/navigation"
+import { Separator } from "@/components/ui/separator"
+import {
+  BarChart3,
+  HomeIcon,
+  SearchSlash,
+  LogOut
+} from "lucide-react"
+import { useSignOut } from "@/hooks/useSignOut"
+
 
 export function SideNavbar() {
+  const { signOut } = useSignOut()
+  const pathname = usePathname()
   return (
     <div className="lg:block hidden border-r h-full">
       <div className="flex h-full max-h-screen flex-col gap-2 ">
-        <div className="flex max-h-[65px] items-center border-b px-3 w-full">
-          <span>Dashboard</span>
+        <div className="flex h-[55px] items-center justify-between border-b px-3 w-full">
+          <Link className="flex items-center gap-2 font-semibold ml-1" href="/">
+            <span className="">Nextjs Starter Kit</span>
+          </Link>
         </div>
-        <div className="flex-1 overflow-auto py-2">
-          <nav className="grid grid-cols-1 ">
+        <div className="flex-1 overflow-auto py-2 ">
+          <nav className="grid items-start px-4 text-sm font-medium">
+            <Link
+              className={clsx("flex text-md items-center gap-2 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50", {
+                "flex text-md items-center gap-2 rounded-lg bg-gray-100 px-3 py-2 text-gray-900  transition-all hover:text-gray-900 dark:bg-gray-800 dark:text-gray-50 dark:hover:text-gray-50": pathname === "/dashboard"
+              })}
+              href="/dashboard"
+            >
+              <div className="border rounded-lg dark:bg-black dark:border-gray-800 border-gray-400 p-1 bg-white">
+                <HomeIcon className="h-4 w-4" />
+              </div>
+              Home
+            </Link>
+            <Link
+              className={clsx("flex text-md items-center gap-2 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50", {
+                "flex text-md items-center gap-2 rounded-lg bg-gray-100 px-3 py-2 text-gray-900  transition-all hover:text-gray-900 dark:bg-gray-800 dark:text-gray-50 dark:hover:text-gray-50": pathname === "/dashboard/analytics"
+              })}
+              href="/dashboard/analytics"
+            >
+              <div className="border rounded-lg dark:bg-black dark:border-gray-800 border-gray-400 p-1 bg-white">
+                <BarChart3 className="h-4 w-4" />
+              </div>
+              Analytics
+            </Link>
+
+            <Link
+              className={clsx("flex text-md items-center gap-2 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50", {
+                "flex text-md items-center gap-2 rounded-lg bg-gray-100 px-3 py-2 text-gray-900  transition-all hover:text-gray-900 dark:bg-gray-800 dark:text-gray-50 dark:hover:text-gray-50": pathname === "/dashboard/monitoring"
+              })}
+              href="/dashboard/monitoring"
+            >
+              <div className="border rounded-lg dark:bg-black dark:border-gray-800 border-gray-400 p-1 bg-white">
+                <SearchSlash className="h-4 w-4" />
+              </div>
+              Monitoring
+            </Link>
             
+            <Separator className="my-3" />
+
+            <Link
+              className={clsx("flex items-center gap-2 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50", {
+                "flex items-center gap-2 rounded-lg bg-gray-100 px-3 py-2 text-gray-900  transition-all hover:text-gray-900 dark:bg-gray-800 dark:text-gray-50 dark:hover:text-gray-50": pathname === "/dashboard/settings"
+              })}
+              href="#signout"
+              onClick={signOut}
+              id="onboarding"
+            >
+              <div className="border rounded-lg dark:bg-black dark:border-gray-800 border-gray-400 p-1 bg-white">
+                <LogOut className="h-4 w-4" />
+              </div>
+              Sign Out
+            </Link>
           </nav>
         </div>
       </div>
