@@ -18,7 +18,7 @@ export function DashboardBreadCrumb() {
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbPage>Analysis</BreadcrumbPage>
+          <BreadcrumbPage>Settings</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
