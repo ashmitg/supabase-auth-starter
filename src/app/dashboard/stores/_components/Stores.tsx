@@ -69,7 +69,7 @@ import {
 export function Stores() {
 
   return (
-    <div className="flex min-h-screen w-full flex-col bg-muted/40 sm:gap-4 sm:py-4 sm:pl-14">
+    <div className="flex flex-col min-h-screen w-full bg-muted/40 sm:gap-4 sm:py-4 sm:pl-14">
       <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8 mx-auto">
         <div className="flex items-center gap-4">
           <h1 className="flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0">
@@ -87,7 +87,7 @@ export function Stores() {
         </div>
         <div className="grid gap-4 md:grid-cols-[1fr_250px] lg:grid-cols-3 lg:gap-8">
           <div className="grid auto-rows-max items-start gap-4 lg:col-span-2 lg:gap-8">
-            <Card x-chunk="dashboard-07-chunk-0">
+            <Card>
               <CardHeader>
                 <CardTitle>Product Details</CardTitle>
                 <CardDescription>
@@ -133,7 +133,7 @@ export function Stores() {
                 </Button>
               </CardFooter>
             </Card>
-            <Card x-chunk="dashboard-07-chunk-2">
+            <Card>
               <CardHeader>
                 <CardTitle>Product Category</CardTitle>
               </CardHeader>
@@ -184,7 +184,7 @@ export function Stores() {
             </Card>
           </div>
           <div className="grid auto-rows-max items-start gap-4 lg:gap-8">
-            <Card x-chunk="dashboard-07-chunk-3">
+            <Card>
               <CardHeader>
                 <CardTitle>Product Status</CardTitle>
               </CardHeader>
@@ -207,8 +207,7 @@ export function Stores() {
               </CardContent>
             </Card>
             <Card
-              className="overflow-hidden" x-chunk="dashboard-07-chunk-4"
-            >
+              className="overflow-hidden">
               <CardHeader>
                 <CardTitle>Product Images</CardTitle>
                 <CardDescription>
@@ -251,7 +250,7 @@ export function Stores() {
                 </div>
               </CardContent>
             </Card>
-            <Card x-chunk="dashboard-07-chunk-5">
+            <Card>
               <CardHeader>
                 <CardTitle>Archive Product</CardTitle>
                 <CardDescription>
